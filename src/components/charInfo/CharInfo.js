@@ -12,12 +12,12 @@ const CharInfo = (props) => {
 
     useEffect(() => {
         updateChar();
-    }, [props.charId]);
+    }, [props.charId]); // eslint-disable-line
 
     const updateChar = () => {
         const { charId } = props;
         if (!charId) {
-            return
+            return;
         }
 
         clearError();
@@ -30,10 +30,10 @@ const CharInfo = (props) => {
         setChar(char);
     }
 
-    const skeleton = char || loading || error ? null : <Skeleton />
-    const errorMessage = error ? <ErrorMessage /> : null
-    const spinner = loading ? <Spinner /> : null
-    const content = !(loading || error || !char) ? <View char={char} /> : null
+    const skeleton = char || loading || error ? null : <Skeleton />;
+    const errorMessage = error ? <ErrorMessage /> : null;
+    const spinner = loading ? <Spinner /> : null;
+    const content = !(loading || error || !char) ? <View char={char} /> : null;
     return (
         <div className="char__info" >
             {skeleton}
@@ -41,7 +41,7 @@ const CharInfo = (props) => {
             {spinner}
             {content}
         </div>
-    )
+    );
 }
 
 const View = ({ char }) => {
@@ -78,18 +78,18 @@ const View = ({ char }) => {
                 {
                     comics.map((elt, i) => {
                         if (i > 9) {
-                            return
+                            return; // eslint-disable-line
                         }
                         return (
                             <li key={i} className="char__comics-item">
                                 {elt.name}
                             </li>
-                        )
+                        );
                     })
                 }
             </ul>
         </>
-    )
+    );
 }
 
 export default CharInfo;

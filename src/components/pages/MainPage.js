@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
 import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
@@ -9,10 +9,10 @@ import decoration from '../../resources/img/vision.png';
 
 const MainPage = () => {
 
-const [selectedChar, setSelectedChar] = useState(null)
+    const [selectedChar, setSelectedChar] = useState(null);
 
     const onCharSelected = (id) => {
-        setSelectedChar(id)
+        setSelectedChar(id);
     }
 
     return (
@@ -30,7 +30,7 @@ const [selectedChar, setSelectedChar] = useState(null)
             </div>
             <img className="bg-decoration" src={decoration} alt="vision" />
         </>
-    )
+    );
 }
 
 export default MainPage;

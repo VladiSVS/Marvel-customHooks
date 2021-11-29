@@ -17,7 +17,7 @@ const RandomChar = () => {
         return () => {
             clearInterval(timerId);
         }
-    }, [])
+    }, []); // eslint-disable-line
 
     const onCharLoaded = (char) => {
         setChar(char);
@@ -30,9 +30,9 @@ const RandomChar = () => {
             .then(onCharLoaded);
     }
 
-    const errorMessage = error ? <ErrorMessage /> : null
-    const spinner = loading ? <Spinner /> : null
-    const content = !(loading || error) ? <View char={char} /> : null
+    const errorMessage = error ? <ErrorMessage /> : null;
+    const spinner = loading ? <Spinner /> : null;
+    const content = !(loading || error) ? <View char={char} /> : null;
 
     return (
         <div className="randomchar" >
@@ -53,7 +53,7 @@ const RandomChar = () => {
                 <img src={mjolnir} alt="mjolnir" className="randomchar__decoration" />
             </div>
         </div>
-    )
+    );
 }
 
 const View = ({ char }) => {
@@ -85,7 +85,7 @@ const View = ({ char }) => {
             </div>
         </div>
 
-    )
+    );
 }
 
 export default RandomChar;

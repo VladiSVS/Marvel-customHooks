@@ -15,15 +15,15 @@ class ErrorBoundary extends React.Component {
         console.log(error, errorInfo)
         this.setState({
             error: true
-        })
+        });
     }
 
     render() {
         if (this.state.error) {
-            return <ErrorMessage />
+            return <ErrorMessage />;
         }
 
-        return this.props.children
+        return this.props.children;
     }
 }
 
